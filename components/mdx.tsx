@@ -24,12 +24,12 @@ function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   );
 }
 
-function CustomLink(props: any) {
-  const href = props.href;
+function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+  const { href, ...rest } = props;
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} {...props}>
+      <Link href={href} {...rest}>
         {props.children}
       </Link>
     );
@@ -42,8 +42,11 @@ function CustomLink(props: any) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props: any) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+import { ImageProps } from "next/image";
+
+function RoundedImage(props: ImageProps & { alt: string }) {
+  const { alt, ...rest } = props;
+  return <Image alt={alt} className="rounded-lg" {...rest} />;
 }
 
 // This replaces rehype-slug
