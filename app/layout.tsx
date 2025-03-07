@@ -5,7 +5,19 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import "./globals.css";
+// Fontsource local font import (https://github.com/fontsource/fontsource)
+import "@fontsource/fira-code/400.css"
+import "@fontsource/fira-code/600.css"
+import "@fontsource/inter/400.css"
+import "@fontsource/inter/700.css"
+import "@fontsource/inter/800.css"
+
+// Devicon import (https://github.com/devicons/devicon)
+import '../node_modules/devicon/devicon.min.css'
+
+import '../styles/css/variables.css'
+import '../styles/css/global.css'
+
 
 const fontSans = FontSans({
   subsets: ["latin"],
