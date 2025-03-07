@@ -15,8 +15,8 @@ import "@fontsource/inter/800.css"
 // Devicon import (https://github.com/devicons/devicon)
 import '../node_modules/devicon/devicon.min.css'
 
-import '../styles/css/variables.css'
-import '../styles/css/global.css'
+import '@/styles/css/variables.css'
+import '@/styles/css/global.css'
 
 
 const fontSans = FontSans({

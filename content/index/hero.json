@@ -1,0 +1,32 @@
+{
+	"intro": {
+		"start": "const Lucas = ( name, passion ) =>",
+		"end": "Hello, my name is",
+		"speed": 60,
+		"deletionSpeed": 80,
+		"wrapper": "h2",
+		"startDelay": 1000,
+		"deleteDelay": 3000,
+		"restartDelay": 12000
+	},
+
+	"header": {
+		"name": "Lucas Kim.",
+		"usp": "I design and build meaningful experiences."
+	},
+
+	"paragraph": "I am a digital polymath — a constantly evolving digital creator driven by a passion for lifelong learning and the desire to leave a lasting impact.",
+
+	"buttons": {
+		"primary": {
+			"title": "Contact Me",
+			"url": "https://about.me/lkim227",
+			"leaveSite": false
+		},
+		"secondary": {
+			"title": "LinkedIn",
+			"url": "https://www.linkedin/in/lkim227",
+			"leaveSite": "true"
+		}
+	}
+}
