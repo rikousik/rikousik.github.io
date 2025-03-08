@@ -1,6 +1,8 @@
+"use client";
+
 import { useEffect, useState } from 'react'
-import { useCallback } from 'react'
-import {useRouter} from 'next/router';
+import { usePathname,useSearchParams } from 'next/navigation';
+
 import Link from 'next/link'
 import ThemeMode from '../utils/theme.util'
 
@@ -10,7 +12,8 @@ import css from '../../styles/structure/navbar.module.scss'
 
 export default function Navbar() {
 
-	const router = useRouter()
+	const pathname = usePathname()
+	const searchParams = useSearchParams()
 
 	const [ menuState, menuToggle ] = useState()
 
@@ -19,35 +22,10 @@ export default function Navbar() {
 	}, [] )
 
 	useEffect( () => {
-		class RouteEvents {
+		menuToggle(false)
 
-			constructor() {
-				console.log(
-					'%c☰  Navigation Router Events Loaded', 
-					'background: #060708; color: #fff; padding: .125rem .75rem; border-radius: 5px; font-weight: 900; '
-				)
-				this.addEventListeners()
-			}
 
-			closeMenu() {
-				menuToggle(false)
-			}
-
-			addEventListeners() {
-				router.events.on('routeChangeComplete', this.closeMenu)
-			}
-
-			removeEventListeners() {
-				router.events.off('routeChangeComplete', this.closeMenu)
-			}
-		}
-
-		const routeEvents = new RouteEvents
-
-		return () => {
-			routeEvents.removeEventListeners()
-		}
-	}, [router.events] )
+	}, [pathname,searchParams] )
 
 	useEffect( () => {
 

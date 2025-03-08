@@ -1,5 +1,10 @@
-@import '_variables';
-@import '_mixins';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@use '_variables';
+@use '_mixins';
 
 ::selection {
 	color: 		var(--background);
@@ -42,9 +47,9 @@ button.button {
 	border: none;
 	margin-right: 1rem;
 
-	@include transition(750ms);
+	@include mixins.transition(750ms);
 	&:hover {
-		@include transition(750ms);
+		@include mixins.transition(750ms);
 	}
 }
 

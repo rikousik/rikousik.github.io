@@ -1,22 +1,26 @@
+"use client";
+
 import { useState, useEffect } from 'react'
 
 import Container from '../structure/container'
-import Icon from '../utils/icon.util'
-
+import { Icon, IconX } from '../utils/icon.util'
+// import IconX from '../utils/icon.util'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { GitPullRequestArrow } from "lucide-react";
 import css from '../../styles/structure/footer.module.scss'
 
 import content from '../../content/footer.json'
 import settings from '../../content/_settings.json'
 
 export default function Footer() {
-	
+
 	const [gitHubInfo, setGitHubInfo] = useState({
 		stars: null,
 		forks: null,
 	});
 
 	useEffect(() => {
-		fetch( settings.portfolio.repo_api )
+		fetch(settings.portfolio.repo_api)
 			.then(response => response.json())
 			.then(json => {
 				const { stargazers_count, forks_count } = json;
@@ -25,9 +29,9 @@ export default function Footer() {
 					forks: forks_count,
 				});
 			})
-		.catch(e => console.error(e));
+			.catch(e => console.error(e));
 	}, []);
-	
+
 	return (
 		<footer className={css.container}>
 			<Container spacing={['verticalXXLrg', 'bottomLrg']}>
@@ -35,14 +39,14 @@ export default function Footer() {
 					<ul className={css.thanks}>
 						<li><h4>Acknowledgments</h4></li>
 						{
-						content.acknowledgments.map( ({ person, link, note }, index) => {
-							return (
-								<li key={index}>
-									<a href={link} rel="noreferrer" target="_blank">{person} <Icon icon={[ 'fad', 'arrow-up-right-from-square' ]} /></a>
-									<p>{note}</p>
-								</li>
-							)
-						})
+							content.acknowledgments.map(({ person, link, note }, index) => {
+								return (
+									<li key={index}>
+										<a href={link} rel="noreferrer" target="_blank">{person} </a>
+										<p>{note}</p>
+									</li>
+								)
+							})
 						}
 					</ul>
 					<ul className={css.links}>
@@ -51,14 +55,14 @@ export default function Footer() {
 						content.links.map( ({ person, link, note }, index) => {
 							return (
 								<li key={index}>
-									<a href={link} rel="noreferrer" target="_blank">{person} <Icon icon={[ 'fad', 'arrow-up-right-from-square' ]} /></a>
+									<a href={link} rel="noreferrer" target="_blank">{person}</a>
 									<p>{note}</p>
 								</li>
 							)
 						})
 						}
 					</ul>
-					<ul className={css.social}>
+					{/* <ul className={css.social}>
 						<li><h4>Social</h4></li>
 						<li className={css.socialList}>
 							{
@@ -69,19 +73,11 @@ export default function Footer() {
 							})
 							}
 						</li>
-					</ul>
+					</ul> */}
 				</section>
 				<section className={css.github}>
 					<a href={settings.portfolio.repo_html} rel="noreferrer" target="_blank">
 						<h5>{settings.portfolio.forkthis}</h5>
-						<ul>
-							<li>
-								<p><Icon icon={[ 'fad', 'code-branch' ]} /> Forks: { gitHubInfo.forks }</p>
-							</li>
-							<li>
-								<p><Icon icon={[ 'fad', 'star' ]} /> Stars: { gitHubInfo.stars }</p>
-							</li>
-						</ul>
 					</a>
 				</section>
 			</Container>

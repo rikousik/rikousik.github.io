@@ -1,3 +1,5 @@
+"use client";
+
 // Utility packages
 import Spacing from '../utils/spacing.util';
 

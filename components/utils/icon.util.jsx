@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 
 // Font Awesome packages
-const { library, config } = require('@fortawesome/fontawesome-svg-core')
+const { library } = require('@fortawesome/fontawesome-svg-core')
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/pro-solid-svg-icons'
 import { fat } from '@fortawesome/pro-thin-svg-icons'
@@ -13,6 +13,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 // Load icons into
 library.add(fat, fal, fas, fad, far, fab)
+
+export const IconX = FontAwesomeIcon;
 
 /**
  * Icon factory utility.
@@ -31,15 +33,21 @@ library.add(fat, fal, fas, fad, far, fab)
  * @param 	{array} icon request props [ iconType, iconKey ]
  * @returns {jsx} 	<Icon />
  */
-export default function Icon({ icon }) {
+ export function Icon({ icon }) {
 
-	const [ iconType, iconKey ] = icon
-
-	const [ stateIconKey, setIconKey ] = useState('circle-notch')
-
-	useEffect( () => setIconKey( iconKey ), [ iconKey ] )
-
-	return (
-		<FontAwesomeIcon icon={[ iconType, stateIconKey ]} />
-	)
-}
+	const [iconType, iconKey] = icon
+	const defaultIcon = ['fal', 'circle-notch']
+	const [stateIconKey, setIconKey] = useState('circle-notch')
+	console.log({ iconType, iconKey })
+	useEffect(() => setIconKey(iconKey), [iconKey])
+	try {
+		return (
+			<FontAwesomeIcon icon={[iconType, stateIconKey]} />
+		)
+	} catch (e) {
+		console.log(e)
+		return (
+			<FontAwesomeIcon icon={defaultIcon} />
+		)
+	}
+} 
