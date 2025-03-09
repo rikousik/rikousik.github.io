@@ -1,12 +1,11 @@
 
-
 export const content = {
 	"intro": {
 		"start": "const Lucas = ( name, passion ) =>",
 		"end": "Hello, my name is",
 		"startDelay": 1000,
 		"deleteDelay": 3000,
-		"restartDelay": 12000
+		"restartDelay": 12000,
 	},
 
 	"header": {

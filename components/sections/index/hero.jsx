@@ -8,8 +8,6 @@ import Container 	from '../../structure/container';
 
 import space		from '../../utils/spacing.util';
 
-import Icon 		from '../../utils/icon.util'
-
 import HeroBg		from '../../blocks/hero.bg/bg-color-1';
 
 import hero 		from '../../../styles/sections/index/hero.module.scss';
@@ -30,7 +28,7 @@ import content		from '../../../content/index/hero.json'
 
 export default function Hero() {
 
-	const [typingStatus, setTypingStatus] = useState('Initializing');
+	const [, setTypingStatus] = useState('Initializing');
 
 	return (
 		<Section classProp={`${hero.section}`}>

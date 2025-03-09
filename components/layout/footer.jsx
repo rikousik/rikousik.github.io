@@ -3,11 +3,8 @@
 import { useState, useEffect } from 'react'
 
 import Container from '../structure/container'
-import { Icon, IconX } from '../utils/icon.util'
 // import IconX from '../utils/icon.util'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { GitPullRequestArrow } from "lucide-react";
-import css from '../../styles/structure/footer.module.scss'
+import css from '@/styles/structure/footer.module.scss'
 
 import content from '../../content/footer.json'
 import settings from '../../content/_settings.json'

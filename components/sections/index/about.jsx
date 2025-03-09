@@ -1,3 +1,4 @@
+"use client";
 // Core packages
 // import Image from 'next/image'
 // Section structure

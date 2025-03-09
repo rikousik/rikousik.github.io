@@ -1,8 +1,8 @@
 
-import Icon from '../utils/icon.util.jsx'
+import Icon from '../utils/icon.util'
 import Badges 	from '../utils/badge.list.util'
 
-import badges 	from '../../styles/blocks/badges.module.scss';
+import badges 	from '@/styles/blocks/badges.module.scss';
 
 export default function BadgesBlock({ title, copy, list, fullContainer, block, icon, invertedColor, headerIcon, containerClass }) {
 	return (
