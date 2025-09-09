@@ -1,15 +1,11 @@
-import { Dock, DockIcon } from "@/components/magicui/dock";
-import { ModeToggle } from "@/components/mode-toggle";
-import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { DATA } from "@/data/resume";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Dock, DockIcon } from '@/components/magicui/dock';
+import { ModeToggle } from '@/components/mode-toggle';
+import { buttonVariants } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { DATA } from '@/data/resume';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export default function Navbar() {
   return (
@@ -22,10 +18,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href={item.href}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
-                  )}
+                  className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-12')}
                 >
                   <item.icon className="size-4" />
                 </Link>
@@ -45,10 +38,7 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   <Link
                     href={social.url}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12"
-                    )}
+                    className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-12')}
                   >
                     <social.icon className="size-4" />
                   </Link>
