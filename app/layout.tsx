@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
+import { PostHogProvider } from '@/components/post-hog-provider';
 
 const inter = Space_Grotesk({ subsets: ['latin'], weight: ['500', '600', '700'] });
 
 export const metadata: Metadata = {
-  title: 'Muhammad Ramazan - Full Stack Developer',
+  title: 'Rezaul Islam Kousik - Applied AI Engineer',
   description:
-    'Portfolio of Muhammad Ramazan, a passionate full-stack developer specializing in modern web technologies, React, Next.js, and innovative digital solutions.',
-  keywords: 'Muhammad Ramazan, Full Stack Developer, React, Next.js, Web Development, Portfolio',
-  authors: [{ name: 'Muhammad Ramazan' }],
+    'Portfolio of Rezaul Islam Kousik, a passionate full-stack developer specializing in modern web technologies, React, Next.js, and innovative digital solutions.',
+  keywords: 'Rezaul Islam Kousik, Full Stack Developer, React, Next.js, Web Development, Portfolio',
+  authors: [{ name: 'Rezaul Islam Kousik' }],
   openGraph: {
-    title: 'Muhammad Ramazan - Full Stack Developer',
+    title: 'Rezaul Islam Kousik - Full Stack Developer',
     description:
-      'Portfolio of Muhammad Ramazan, a passionate full-stack developer specializing in modern web technologies.',
+      'Portfolio of Rezaul Islam Kousik, a passionate full-stack developer specializing in modern web technologies.',
     type: 'website',
   },
 };
