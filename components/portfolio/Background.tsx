@@ -30,28 +30,10 @@ export default function Background() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-black" />
 
       {/* Animated gradient orbs - reduced blur on mobile */}
-      <motion.div
+      <div
         className={`absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-500/20 dark:from-blue-500/30 dark:to-purple-600/30 rounded-full -z-10 ${
           isMobile ? 'blur-xl' : 'blur-3xl'
         }`}
-        animate={
-          isMobile
-            ? {
-                x: [0, 50, 0],
-                y: [0, -25, 0],
-              }
-            : {
-                x: [0, 100, 0],
-                y: [0, -50, 0],
-                scale: [1, 1.2, 1],
-              }
-        }
-        transition={{
-          ...animationConfig,
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: 'reverse',
-        }}
-        style={{ willChange: 'transform' }}
       />
 
       <motion.div
@@ -98,25 +80,7 @@ export default function Background() {
 
       {/* Reduced floating particles */}
       {Array.from({ length: particleCount }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-blue-400/60 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            willChange: 'transform, opacity',
-          }}
-          animate={{
-            y: [0, isMobile ? -50 : -100],
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: Math.random() * 2 + 4,
-            repeat: Number.POSITIVE_INFINITY,
-            delay: Math.random() * 3,
-            ease: 'linear',
-          }}
-        />
+        <div key={i} className="absolute w-1 h-1 bg-blue-400/60 rounded-full" />
       ))}
 
       {/* Simplified grid pattern overlay - only on desktop */}

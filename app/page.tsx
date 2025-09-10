@@ -7,8 +7,8 @@ import Footer from '@/components/portfolio/Footer';
 import HeroSection from '@/components/portfolio/HeroSection';
 import Navigation from '@/components/portfolio/Navigation';
 import OverviewSection from '@/components/portfolio/OverviewSection';
+import WorkExperience from '@/components/portfolio/WorkExperience';
 import { ProjectCard } from '@/components/project-card';
-import { ResumeCard } from '@/components/resume-card';
 import { DATA } from '@/data/resume';
 
 const BLUR_FADE_DELAY = 0.04;
@@ -36,28 +36,7 @@ export default function Portfolio() {
 
         {/* Tech Stack Section */}
         {/* <TechStackSection /> */}
-        <section id="work">
-          <div className="flex min-h-0 flex-col gap-y-3">
-            <BlurFade delay={BLUR_FADE_DELAY * 5}>
-              <h2 className="text-xl font-bold">Work Experience</h2>
-            </BlurFade>
-            {DATA.work.map((work, id) => (
-              <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
-                <ResumeCard
-                  key={work.company}
-                  logoUrl={work.logoUrl}
-                  altText={work.company}
-                  title={work.company}
-                  subtitle={work.title}
-                  href={work.href}
-                  badges={work.badges}
-                  period={`${work.start} - ${work.end ?? 'Present'}`}
-                  description={work.description}
-                />
-              </BlurFade>
-            ))}
-          </div>
-        </section>
+        <WorkExperience />
         <section id="projects">
           <div className="space-y-12 w-full py-12">
             <BlurFade delay={BLUR_FADE_DELAY * 11}>

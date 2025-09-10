@@ -6,17 +6,6 @@ import Image from 'next/image';
 import SectionHeader from './SectionHeader';
 
 export default function OverviewSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
@@ -43,14 +32,7 @@ export default function OverviewSection() {
   };
 
   return (
-    <motion.section
-      id="overview"
-      className="mb-16 md:mb-24 lg:mb-32 relative"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.2 }}
-      viewport={{ once: true }}
-    >
+    <section id="overview" className="mb-16 md:mb-24 lg:mb-32 relative">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -72,13 +54,7 @@ export default function OverviewSection() {
         />
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="relative z-10"
-      >
+      <div className="relative z-10">
         {/* Section Header */}
         <SectionHeader
           tagText="Get To Know Me"
@@ -91,6 +67,10 @@ export default function OverviewSection() {
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-12 gap-6 md:gap-8 items-start px-4">
+          {/* Enhanced Sidebar */}
+          <motion.div variants={itemVariants} className="lg:col-span-4 space-y-6 mt-6 lg:mt-0">
+            <Image src="/img/photo.png" width={600} height={800} alt="Nelson family photo" />
+          </motion.div>
           {/* Main Profile Section */}
           <motion.div variants={itemVariants} className="lg:col-span-8">
             <div className="space-y-6 md:space-y-8">
@@ -178,8 +158,81 @@ export default function OverviewSection() {
                   </div>
                 </div>
               </div>
+            </div>
+          </motion.div>
 
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          {/* Main Profile Section */}
+          <motion.div variants={itemVariants} className="lg:col-span-12">
+            <div className="space-y-6 md:space-y-8">
+              {/* Available for Hire */}
+
+              <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-blue-50/80 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/30 shadow-xl flex flex-col"
+                >
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                    <Icon
+                      icon="solar:rocket-bold"
+                      className="text-emerald-600 w-5 h-5"
+                      width={20}
+                      height={20}
+                    />
+                    Available for Hire
+                  </h4>
+                  <div className="space-y-3.5">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 2.0 }}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-green-100/70 dark:bg-gray-800/30  transition-all duration-300 group border border-white/20 dark:border-gray-700/30"
+                    >
+                      <Icon
+                        icon="solar:check-circle-bold"
+                        className="text-green-600 w-5 h-5"
+                        width={20}
+                        height={20}
+                      />
+                      <span className="text-sm font-medium text-gray-800 dark:text-gray-300">
+                        Open to New Opportunities
+                      </span>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 2.2 }}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-green-100/70 dark:bg-gray-800/30  transition-all duration-300 group border border-white/20 dark:border-gray-700/30"
+                    >
+                      <Icon
+                        icon="solar:planet-2-bold"
+                        className="text-cyan-600 w-5 h-5"
+                        width={20}
+                        height={20}
+                      />
+                      <span className="text-sm font-medium text-gray-800 dark:text-gray-300">
+                        Open to Relocation
+                      </span>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 2.4 }}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-green-100/70 dark:bg-gray-800/30  transition-all duration-300 group border border-white/20 dark:border-gray-700/30"
+                    >
+                      <Icon
+                        icon="solar:clock-circle-bold"
+                        className="text-blue-600 w-5 h-5"
+                        width={20}
+                        height={20}
+                      />
+                      <span className="text-sm font-medium text-gray-800 dark:text-gray-300">
+                        Remote & On-site Available
+                      </span>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
                 {/* Contact Information */}
                 <motion.div
                   variants={itemVariants}
@@ -312,76 +365,8 @@ export default function OverviewSection() {
               </div>
             </div>
           </motion.div>
-
-          {/* Enhanced Sidebar */}
-          <motion.div variants={itemVariants} className="lg:col-span-4 space-y-6 mt-6 lg:mt-0">
-            <Image src="/img/photo.png" width={600} height={800} alt="Nelson family photo" />
-
-            {/* Available for Hire */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50/90 to-cyan-50/90 dark:from-emerald-950/30 dark:to-cyan-950/30 backdrop-blur-sm border border-white/30 dark:border-gray-700/40 shadow-xl">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                <Icon
-                  icon="solar:rocket-bold"
-                  className="text-emerald-600 w-5 h-5"
-                  width={20}
-                  height={20}
-                />
-                Available for Hire
-              </h4>
-              <div className="space-y-3.5">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.0 }}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-green-100/70 dark:bg-gray-800/30  transition-all duration-300 group border border-white/20 dark:border-gray-700/30"
-                >
-                  <Icon
-                    icon="solar:check-circle-bold"
-                    className="text-green-600 w-5 h-5"
-                    width={20}
-                    height={20}
-                  />
-                  <span className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    Open to New Opportunities
-                  </span>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.2 }}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-green-100/70 dark:bg-gray-800/30  transition-all duration-300 group border border-white/20 dark:border-gray-700/30"
-                >
-                  <Icon
-                    icon="solar:planet-2-bold"
-                    className="text-cyan-600 w-5 h-5"
-                    width={20}
-                    height={20}
-                  />
-                  <span className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    Open to Relocation
-                  </span>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.4 }}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-green-100/70 dark:bg-gray-800/30  transition-all duration-300 group border border-white/20 dark:border-gray-700/30"
-                >
-                  <Icon
-                    icon="solar:clock-circle-bold"
-                    className="text-blue-600 w-5 h-5"
-                    width={20}
-                    height={20}
-                  />
-                  <span className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    Remote & On-site Available
-                  </span>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
         </div>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }
