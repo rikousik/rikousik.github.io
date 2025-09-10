@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import SectionHeader from './SectionHeader';
+import { Icon } from "@iconify/react";
+import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
+import SectionHeader from "./SectionHeader";
 
 export default function OverviewSection() {
-  const itemVariants = {
+  const itemVariants:Variants = {
     hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -19,14 +19,14 @@ export default function OverviewSection() {
     },
   };
 
-  const floatVariants = {
+  const floatVariants: Variants = {
     animate: {
       y: [-15, 15, -15],
       x: [-5, 5, -5],
       transition: {
         duration: 8,
         repeat: Number.POSITIVE_INFINITY,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       },
     },
   };
@@ -43,13 +43,13 @@ export default function OverviewSection() {
         <motion.div
           variants={floatVariants}
           animate="animate"
-          style={{ animationDelay: '3s' }}
+          style={{ animationDelay: "3s" }}
           className="absolute bottom-8 md:bottom-16 left-4 md:left-16 w-24 md:w-40 h-24 md:h-40 bg-linear-to-br from-green-400/15 md:from-green-400/20 to-cyan-400/15 md:to-cyan-400/20 rounded-full blur-xl md:blur-2xl"
         />
         <motion.div
           variants={floatVariants}
           animate="animate"
-          style={{ animationDelay: '6s' }}
+          style={{ animationDelay: "6s" }}
           className="hidden md:block absolute top-1/2 left-1/3 w-16 h-16 bg-linear-to-br from-pink-400/25 to-orange-400/25 rounded-full blur-xl"
         />
       </div>
@@ -68,8 +68,16 @@ export default function OverviewSection() {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-12 gap-6 md:gap-8 items-start px-4">
           {/* Enhanced Sidebar */}
-          <motion.div variants={itemVariants} className="lg:col-span-4 space-y-6 mt-6 lg:mt-0">
-            <Image src="/img/photo.png" width={600} height={800} alt="Nelson family photo" />
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-4 space-y-6 mt-6 lg:mt-0"
+          >
+            <Image
+              src="/img/photo.png"
+              width={600}
+              height={800}
+              alt="Nelson family photo"
+            />
           </motion.div>
           {/* Main Profile Section */}
           <motion.div variants={itemVariants} className="lg:col-span-8">
@@ -84,38 +92,43 @@ export default function OverviewSection() {
                 <div className="space-y-4 md:space-y-6">
                   <div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white flex items-center gap-2 md:gap-3">
-                      <span className="text-2xl sm:text-3xl md:text-4xl">👋</span>
+                      <span className="text-2xl sm:text-3xl md:text-4xl">
+                        👋
+                      </span>
                       Hello, I&apos;m Muhammad Ramazan
                     </h3>
                     <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
-                      A passionate{' '}
+                      A passionate{" "}
                       <span className="font-bold text-blue-600 dark:text-blue-400">
                         Full Stack Developer
-                      </span>{' '}
+                      </span>{" "}
                       and
                       <span className="font-bold text-purple-600 dark:text-purple-400">
                         &nbsp; AI enthusiast
-                      </span>{' '}
+                      </span>{" "}
                       with
                       <span className="font-bold text-green-600 dark:text-green-400">
-                        {' '}
+                        {" "}
                         5+ years
-                      </span>{' '}
-                      of experience crafting digital experiences that users love.
+                      </span>{" "}
+                      of experience crafting digital experiences that users
+                      love.
                     </p>
                   </div>
 
                   {/* Expanded About Content */}
                   <div className="space-y-3 md:space-y-4 border-t border-gray-200/50 dark:border-gray-700/50 pt-4 md:pt-6">
                     <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                      I specialize in building scalable web and mobile applications using React,
-                      Next.js, TypeScript, and modern development technologies. I thrive on turning
-                      complex problems into elegant solutions that users love.
+                      I specialize in building scalable web and mobile
+                      applications using React, Next.js, TypeScript, and modern
+                      development technologies. I thrive on turning complex
+                      problems into elegant solutions that users love.
                     </p>
                     <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                      Beyond work, I love exploring emerging technologies, contributing to
-                      open-source projects, and mentoring aspiring developers. I believe in
-                      continuous learning and staying at the forefront of technological innovation.
+                      Beyond work, I love exploring emerging technologies,
+                      contributing to open-source projects, and mentoring
+                      aspiring developers. I believe in continuous learning and
+                      staying at the forefront of technological innovation.
                     </p>
                   </div>
 
@@ -132,15 +145,15 @@ export default function OverviewSection() {
                     </h4>
                     <div className="flex flex-wrap gap-2 md:gap-3">
                       {[
-                        'AI Integration',
-                        'React',
-                        'Next.js',
-                        'TypeScript',
-                        'Node.js',
-                        'Python',
-                        'AWS',
-                        'UI/UX Design',
-                        'Healthcare IT',
+                        "AI Integration",
+                        "React",
+                        "Next.js",
+                        "TypeScript",
+                        "Node.js",
+                        "Python",
+                        "AWS",
+                        "UI/UX Design",
+                        "Healthcare IT",
                       ].map((skill, index) => (
                         <motion.span
                           key={skill}
@@ -327,19 +340,19 @@ export default function OverviewSection() {
                   <div className="space-y-4">
                     {[
                       {
-                        icon: 'solar:star-bold',
-                        text: 'Top Rated on Upwork',
-                        color: 'text-yellow-600',
+                        icon: "solar:star-bold",
+                        text: "Top Rated on Upwork",
+                        color: "text-yellow-600",
                       },
                       {
-                        icon: 'solar:cpu-bolt-bold-duotone',
-                        text: 'Expert in AI Integration',
-                        color: 'text-blue-600',
+                        icon: "solar:cpu-bolt-bold-duotone",
+                        text: "Expert in AI Integration",
+                        color: "text-blue-600",
                       },
                       {
-                        icon: 'solar:code-square-bold',
-                        text: '50+ Projects Delivered',
-                        color: 'text-green-600',
+                        icon: "solar:code-square-bold",
+                        text: "50+ Projects Delivered",
+                        color: "text-green-600",
                       },
                     ].map((achievement, index) => (
                       <motion.div

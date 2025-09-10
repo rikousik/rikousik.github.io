@@ -20,7 +20,10 @@ export default function Background() {
   const particleCount = isMobile ? 5 : 12;
 
   // Reduce animation complexity on mobile
-  const animationConfig = isMobile
+  const animationConfig:{
+    duration: number;
+    ease: 'linear' | 'easeInOut';
+  } = isMobile
     ? { duration: 12, ease: 'linear' }
     : { duration: 8, ease: 'easeInOut' };
 

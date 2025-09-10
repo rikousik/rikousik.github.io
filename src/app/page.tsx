@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import Background from '@/components/portfolio/Background';
-import ContactSection from '@/components/portfolio/ContactSection';
-import Footer from '@/components/portfolio/Footer';
-import HeroSection from '@/components/portfolio/HeroSection';
-import Navigation from '@/components/portfolio/Navigation';
-import OverviewSection from '@/components/portfolio/OverviewSection';
-import WorkExperience from '@/components/portfolio/WorkExperience';
-import { ProjectCard } from '@/components/project-card';
-import { DATA } from '@/data/resume';
+import Background from "@/components/portfolio/Background";
+import ContactSection from "@/components/portfolio/ContactSection";
+import Footer from "@/components/portfolio/Footer";
+import HeroSection from "@/components/portfolio/HeroSection";
+import Navigation from "@/components/portfolio/Navigation";
+import OverviewSection from "@/components/portfolio/OverviewSection";
+import { ProjectCard } from "@/components/portfolio/project-card";
+import WorkExperience from "@/components/portfolio/WorkExperience";
+import { DATA } from "@/data/resume";
 
 // import {
 //   Background,
 //   HeroSection,
 //   Navigation} from "@/components/portfolio";
 
-export default function Portfolio() {
+export default function Home() {
   return (
     <div className="min-h-screen text-gray-900 dark:text-white relative">
       {/* Background */}
@@ -46,8 +46,9 @@ export default function Portfolio() {
                   Check out my latest work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple websites to complex web
-                  applications. Here are a few of my favorites.
+                  I&apos;ve worked on a variety of projects, from simple
+                  websites to complex web applications. Here are a few of my
+                  favorites.
                 </p>
               </div>
             </div>

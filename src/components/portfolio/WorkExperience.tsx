@@ -1,5 +1,5 @@
 import { DATA } from '@/data/resume';
-import { ResumeCard } from '../resume-card';
+import { ResumeCard } from './resume-card';
 
 
 export default function WorkExperience() {

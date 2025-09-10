@@ -40,14 +40,14 @@ export const ResumeCard = ({
 
   return (
     <Link href={href || '#'} className="block cursor-pointer my-4" onClick={handleClick}>
-      <Card className="flex bg-transparent">
+      <Card className="flex flex-row bg-transparent px-4">
         <div className="flex-none">
-          <Avatar className="border size-12 m-auto">
+          <Avatar className="border size-12">
             <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
-        <div className="grow ml-4 items-center flex-col group">
+        <div className="grow items-center flex-col group">
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">

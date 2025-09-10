@@ -216,6 +216,7 @@ export default function ContactSection() {
                   {/* add a button to close the message */}
                   <button
                     onClick={() => setSubmitStatus('idle')}
+                    type='button'
                     className="absolute top-1 right-1  text-red-500 rounded-md"
                   >
                     <Icon icon="solar:close-circle-bold" width={20} height={20} />
@@ -239,6 +240,7 @@ export default function ContactSection() {
                   {/* add a button to close the message */}
                   <button
                     onClick={() => setSubmitStatus('idle')}
+                    type='button'
                     className="absolute top-1 right-1  text-red-500 rounded-md"
                   >
                     <Icon icon="solar:close-circle-bold" width={20} height={20} />
