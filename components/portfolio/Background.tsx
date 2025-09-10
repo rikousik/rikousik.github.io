@@ -27,17 +27,17 @@ export default function Background() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
       {/* Base gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-black" />
+      <div className="absolute inset-0 bg-linear-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-black" />
 
       {/* Animated gradient orbs - reduced blur on mobile */}
       <div
-        className={`absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-500/20 dark:from-blue-500/30 dark:to-purple-600/30 rounded-full -z-10 ${
+        className={`absolute top-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-blue-400/20 to-purple-500/20 dark:from-blue-500/30 dark:to-purple-600/30 rounded-full -z-10 ${
           isMobile ? 'blur-xl' : 'blur-3xl'
         }`}
       />
 
       <motion.div
-        className={`absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-300/15 to-blue-400/15 dark:from-cyan-400/25 dark:to-blue-500/25 rounded-full ${
+        className={`absolute top-3/4 right-1/4 w-80 h-80 bg-linear-to-r from-cyan-300/15 to-blue-400/15 dark:from-cyan-400/25 dark:to-blue-500/25 rounded-full ${
           isMobile ? 'blur-lg' : 'blur-3xl'
         }`}
         animate={
@@ -63,7 +63,7 @@ export default function Background() {
 
       {!isMobile && (
         <motion.div
-          className="absolute top-1/2 right-1/3 w-72 h-72 bg-gradient-to-r from-purple-400/15 to-pink-400/15 dark:from-purple-500/20 dark:to-pink-500/20 rounded-full blur-3xl"
+          className="absolute top-1/2 right-1/3 w-72 h-72 bg-linear-to-r from-purple-400/15 to-pink-400/15 dark:from-purple-500/20 dark:to-pink-500/20 rounded-full blur-3xl"
           animate={{
             x: [0, 120, 0],
             y: [0, -80, 0],

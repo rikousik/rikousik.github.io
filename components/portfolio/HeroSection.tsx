@@ -7,7 +7,7 @@ import TypewriterRole from './TypewriterRole';
 
 export default function HeroSection() {
   return (
-    <div className="relative min-h-[100dvh] flex items-center justify-center">
+    <div className="relative min-h-dvh flex items-center justify-center">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 dark:bg-blue-400/10 rounded-full blur-3xl" />
@@ -44,7 +44,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent z-10">
+          <span className="bg-linear-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent z-10">
             Rezaul Islam Kousik
           </span>
         </motion.h1>
