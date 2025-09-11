@@ -3,10 +3,11 @@
 import { Icon } from "@iconify/react";
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
+import { DATA } from "@/data/resume";
 import SectionHeader from "./SectionHeader";
 
 export default function OverviewSection() {
-  const itemVariants:Variants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -95,7 +96,7 @@ export default function OverviewSection() {
                       <span className="text-2xl sm:text-3xl md:text-4xl">
                         👋
                       </span>
-                      Hello, I&apos;m Rezaul Islam Kousik
+                      Hello, I&apos;m {DATA.name}!
                     </h3>
                     <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
                       A passionate{" "}
@@ -109,7 +110,7 @@ export default function OverviewSection() {
                       with
                       <span className="font-bold text-green-600 dark:text-green-400">
                         {" "}
-                        5+ years
+                        7+ years
                       </span>{" "}
                       of experience crafting digital experiences that users
                       love.
@@ -144,17 +145,7 @@ export default function OverviewSection() {
                       Core Technologies
                     </h4>
                     <div className="flex flex-wrap gap-2 md:gap-3">
-                      {[
-                        "AI Integration",
-                        "React",
-                        "Next.js",
-                        "TypeScript",
-                        "Node.js",
-                        "Python",
-                        "AWS",
-                        "UI/UX Design",
-                        "Healthcare IT",
-                      ].map((skill, index) => (
+                      {DATA.skills.map((skill, index) => (
                         <motion.span
                           key={skill}
                           initial={{ opacity: 0, scale: 0 }}
@@ -278,7 +269,7 @@ export default function OverviewSection() {
                       </div>
                       <div>
                         <div className="text-sm font-bold text-gray-900 dark:text-white break-all">
-                          mramazan1@yahoo.com
+                          {DATA.contact.email}
                         </div>
                       </div>
                     </motion.a>
@@ -297,7 +288,7 @@ export default function OverviewSection() {
                       </div>
                       <div>
                         <div className="text-sm font-bold text-gray-900 dark:text-white">
-                          mramazan.dev
+                          {DATA.url.replace("https://", "")}
                         </div>
                       </div>
                     </motion.div>
@@ -316,7 +307,7 @@ export default function OverviewSection() {
                       </div>
                       <div>
                         <div className="text-sm font-bold text-gray-900 dark:text-white">
-                          Islamabad, Pakistan
+                          {DATA.location}
                         </div>
                       </div>
                     </motion.div>
@@ -341,7 +332,7 @@ export default function OverviewSection() {
                     {[
                       {
                         icon: "solar:star-bold",
-                        text: "Top Rated on Upwork",
+                        text: "Top Rated on Upwork and Fiverr",
                         color: "text-yellow-600",
                       },
                       {

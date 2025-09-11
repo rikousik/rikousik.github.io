@@ -30,8 +30,7 @@ export default function HeroSection() {
 
         {/* Tagline */}
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Crafting exceptional digital experiences with clean code and
-          thoughtful design
+          {DATA.description}
         </p>
 
         {/* Social Links - keeping exactly the same */}
@@ -67,34 +66,6 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
-
-        {/* Skills Preview */}
-        {/* <div
-          className="flex flex-wrap justify-center gap-3 mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2 }}
-        >
-          {[
-            { icon: "skill-icons:react-dark", label: "React" },
-            { icon: "skill-icons:typescript", label: "TypeScript" },
-            { icon: "skill-icons:nextjs-dark", label: "Next.js" },
-            { icon: "skill-icons:nodejs-dark", label: "Node.js" },
-            { icon: "skill-icons:tailwindcss-dark", label: "Tailwind" }
-          ].map((skill, index) => (
-            <div
-              key={skill.label}
-              className="flex items-center gap-2 px-3 py-2 bg-gray-50/80 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-200/50 dark:border-gray-700/30"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 + index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -2 }}
-            >
-              <Icon icon={skill.icon} width={16} height={16} />
-              <span className="text-sm text-gray-700 dark:text-gray-300">{skill.label}</span>
-            </div>
-          ))}
-        </div> */}
 
         {/* Status */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50/80 dark:bg-green-900/20 border border-green-200/50 dark:border-green-800/50 rounded-full backdrop-blur-sm">

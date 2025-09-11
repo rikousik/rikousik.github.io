@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { DATA } from "@/data/resume";
 
 export default function TypewriterRole() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const roles = ['Full Stack Developer', 'Software Engineer', 'AI/ML Engineer'];
 
   // Typewriter effect
   useEffect(() => {
-    const currentRole = roles[currentRoleIndex];
+    const currentRole = DATA.roles[currentRoleIndex];
     const timeout = setTimeout(
       () => {
         if (!isDeleting) {
@@ -26,11 +26,11 @@ export default function TypewriterRole() {
             setDisplayText(displayText.slice(0, -1));
           } else {
             setIsDeleting(false);
-            setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+            setCurrentRoleIndex((prev) => (prev + 1) % DATA.roles.length);
           }
         }
       },
-      isDeleting ? 50 : 120
+      isDeleting ? 50 : 120,
     );
 
     return () => clearTimeout(timeout);
@@ -51,11 +51,15 @@ export default function TypewriterRole() {
           scale: [1, 1.3, 1],
         }}
         transition={{
-          rotate: { duration: 10, repeat: Number.POSITIVE_INFINITY, ease: 'linear' },
+          rotate: {
+            duration: 10,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          },
           scale: { duration: 2, repeat: Number.POSITIVE_INFINITY },
         }}
         style={{
-          transformOrigin: '-60px 30px',
+          transformOrigin: "-60px 30px",
         }}
       />
 
@@ -66,11 +70,15 @@ export default function TypewriterRole() {
           scale: [1, 1.4, 1],
         }}
         transition={{
-          rotate: { duration: 15, repeat: Number.POSITIVE_INFINITY, ease: 'linear' },
+          rotate: {
+            duration: 15,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          },
           scale: { duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 1 },
         }}
         style={{
-          transformOrigin: '80px -20px',
+          transformOrigin: "80px -20px",
         }}
       />
 
@@ -79,17 +87,17 @@ export default function TypewriterRole() {
         className="relative overflow-hidden rounded-2xl px-6 py-3 min-w-[280px]"
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.6, type: 'spring', stiffness: 200 }}
+        transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
       >
         {/* Animated Background Layers */}
         <motion.div
           className="absolute inset-0 rounded-2xl"
           animate={{
             background: [
-              'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
-              'linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%)',
-              'linear-gradient(135deg, #ec4899 0%, #f59e0b 50%, #3b82f6 100%)',
-              'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
+              "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+              "linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%)",
+              "linear-gradient(135deg, #ec4899 0%, #f59e0b 50%, #3b82f6 100%)",
+              "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
             ],
           }}
           transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
@@ -99,12 +107,12 @@ export default function TypewriterRole() {
         <motion.div
           className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent rounded-2xl"
           animate={{
-            x: ['-100%', '100%'],
+            x: ["-100%", "100%"],
           }}
           transition={{
             duration: 3,
             repeat: Number.POSITIVE_INFINITY,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
         />
 
@@ -112,7 +120,11 @@ export default function TypewriterRole() {
         <motion.div
           className="absolute inset-0 opacity-20 rounded-2xl"
           animate={{ rotate: [0, 360] }}
-          transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: 'linear' }}
+          transition={{
+            duration: 25,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
         >
           <div className="absolute top-1 left-2 w-1 h-1 bg-white rounded-full" />
           <div className="absolute top-3 right-3 w-0.5 h-0.5 bg-white rounded-full" />
@@ -126,9 +138,9 @@ export default function TypewriterRole() {
             className="text-white font-semibold text-left inline-block min-w-[200px]"
             animate={{
               textShadow: [
-                '0 0 10px rgba(255,255,255,0.3)',
-                '0 0 20px rgba(255,255,255,0.6)',
-                '0 0 10px rgba(255,255,255,0.3)',
+                "0 0 10px rgba(255,255,255,0.3)",
+                "0 0 20px rgba(255,255,255,0.6)",
+                "0 0 10px rgba(255,255,255,0.3)",
               ],
             }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
@@ -152,12 +164,10 @@ export default function TypewriterRole() {
           transition={{
             duration: 3,
             repeat: Number.POSITIVE_INFINITY,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
         />
       </motion.div>
     </motion.div>
   );
 }
-
-
